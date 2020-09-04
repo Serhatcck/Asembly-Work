@@ -1,0 +1,19 @@
+X86 mimarisi korumalı modda çalışırken sekiz adet 32 bit genel amaçlı kayıt(GeneralPurpose Registers) bulunur:
+EAX,EBX,ECX,EDX,EDI,ESI,EBP ve ESP . Bazıları ayrıca 8 ve 16 bitlik kayıtlara bölünebilir.Instruction pointer
+EIP kaydında saklanır.
+ECX: Counter in loops
+ESI: Source in string/memory operations
+EDI: Destination in string/memory operations
+EBP: Base frame pointer
+ESP: Stack pointer
+
+Yaygın kullanılan veri tipleri:
+Bytes-8 bits:AL,BL,CL
+Word-16 bits:AX,BX,CX
+Double Workd-32 bits: EAX,EBX,ECX
+Quad Word-64 bits: x68 64 GPR'e sahip değildir,iki farklı registeri
+kombine ederek 64 bit register oluşturabilir.Örneğin RDTSC->EDX:EAX
+
+32 bitlik EFLAGS registerları aritmetik işlemlerin ve diğer yürütme işlemlerinin
+(trap flap) durumunu saklamak için kullanılır.
+EFLAGS'daki flaglar koşullu dallanmalar için kullanılır

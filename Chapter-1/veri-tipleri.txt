@@ -1,0 +1,49 @@
+Assembly dilde veri tipleri: 
+real4 32-bit IEEE754 kısa gerçel sayı tipi
+byte, sbyte 8-bit isaretsiz ve isaretli veri tipi
+word, sword 16-bit isaretsiz ve isaretli veri tipi
+dword, sdword 32-bit isaretsiz ve isaretli veri tipi
+qword, sqword 64-bit isaretsiz ve isaretli veri tipi
+
+Asagıdaki talimatlarlar bellekte istenen veri tipinde yer açmak için kullanılır
+->DB
+DB bellekte 8-bit tipler için islenen listesine uygun yer açar. Islenenler
+virgülle ayrılarak listelenir. Böylece bir tek bayt ya da virgüllerle
+ayrılmıs bir dizi bayt için kullanılabilir.
+DB ? ; etiketlenmemis ve ilkdeger verilmemis bir baytlık yer
+ayırır.
+sayı1 DB ’a’ ; sayı1 etiketiyle tek karakterlik yer açıp ilkdeger
+olarak ’a’ nın ASCII kodunu koyar
+msg1 DB ’kolay gelsin’ ; msg1 etiketiyle adreslenmis 12 karakterlik
+yer açıp içine ilkdeger olarak ’kolay gelsin’ yerlestirir.
+sayılar DB 10, 12h, 0Ah, ’0Ah’ ; sayılar etiketiyle adreslenen
+6 baytlık yer açıp içine sırasıyla 0Ah, 12h, 0Ah, 30h, 41h ve 68h
+yerlestirir.
+tampon100 DB 100 DUP(20h): tampon100 etiketiyle adresli
+100 bayt yer ayırıp içine 100 tane 20h koyar. 20h bosluk
+karakterinin ASCII kodudur
+->DW
+DW bellekte 16-bit veri tipleri için islenen listesine uygun yer açar.
+Islenenler virgülle ayrılarak listelenir.
+DW ? : etiketlenmemis 16-bit veri yeri açar. Ilkdeger vermez.
+sayı2 DW 10 ; sayı2 etiketli 16 bit yer açar. Ilkdeger olarak
+adreslenen bellege küçük uçtan11 000Ah yerlestirir. Böylece eger
+data bölütünde kullanılmıssa
+RAM8(DS:sayı2) adresine 0Ah,
+RAM8(DS:sayı2+1) adresine 00h
+yerlesmis olur.
+sayı3 DW 1234H, -2,1 : sayı3 etiketiyle adresli 16 bitlik üç yer
+açar ve ilkdeger olarak küçük uçtan 1234H, 0FFFEH, 0001H
+yerlestirir. Sonuçta bellege sayı3 ofsetinden baslayarak 34h, 12h,
+0FEh, 0FFh, 01h, 00h yerlesmis olur.
+sayılar2 DW 5 dup(0), 15 dup(1): bellekte sayılar2 adresli 16
+bitlik 20 yer açıp içine ilkdeger olarak 5 tane 0000h, ve 15 tane
+0001h yerlestirir
+->DD
+DD bellekte 32 bit veri tipi için islenen listesine yer açar. Islenenler
+virgülle ayrılarak listelenir. DD de aynı DB ve DW gibi liste veya
+dup() ifadesiyle kullanılabilir.
+DD 123H : bellekte 23H 01H 00H 00H olarak ilkdegerlenen 4
+baytlık yer açar.
+->DT
+DT bellekte ASCII veya BCD kodlanmıs 10 baytlık yer açar.

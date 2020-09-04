@@ -1,0 +1,21 @@
+X86 komut seti(instruction set)registerlar ve hafıza arasındaki veri hareketi açısından yüksek düzeyde esneklik sağlar.
+Hareket beş genel yöntemde sınıflandırılır:
+Immediate to register(Doğrudan registera)
+Register to register(Registerdan registera)
+Immediate to memory(Doğrudan belleğe)
+X86 ve X64
+Register to memory and vice versa(Registerden belleğe ve bunun tersi bellekten registera)
+Memory to memory(Bellekten belleğe)
+
+İlk dört yöntem tüm modern mimariler tarafından desteklenir,ancak sonuncusu x86'ya özeldir.
+ARM mimarileri hafıza üzerinde direk işlemler yapamaz.ARM mimarisinin bellekten örnek bir değer okuma senaryosu
+aşşağıdaki gibidir:
+1-Veriyi bellekten registera kayıt et
+2-Registerdaki değeri bir arttır
+3-Değeri registerdan belleğe yaz
+
+X86 direk belleğe erişebildiği için yukarıdaki adımları gerçekleştirmesine gerek yoktur.Bunun yerien INC veya ADD 
+gibi fonksiyonlar çalıştırılabilir
+
+Bir diğer önemli ayırt edici özellik X86'nın değişken uzunluğu 1-15 bayt arasındadır fakat ARM'nin
+2-4 bayt arasındadır

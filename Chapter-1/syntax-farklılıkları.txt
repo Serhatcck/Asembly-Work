@@ -1,0 +1,8 @@
+Kullanılan assemblr ve disassembler mimarisine göre oluşan kaynak kodda ve asembly kodunda bazı farklılıklar olabilir
+->AT&T register isimlerinin başına % işareti ekler;doğruda bellek adresi bildiriminin başına $ işareti ekler.
+İntel böyle bir şey yapmaz
+->AT&T talimat komutlarına bazı ön ekler ekler.İntel böyle bir şey yapmaz
+->AT&T ilk önce kaynağı sonra ise hedef belirtilir.İntel böyle bir şey yapmaz(Bunun tam tersini yapar)
+
+Windows'taki disassemblers ve assemblers ve diğer tersine mühendislik araçlar(IDA Pro...)Tipik olarak Intel
+gösterimini kullanırken,UNIX'dekiler genellikle AT&T gösterimini(GCC)izler.
